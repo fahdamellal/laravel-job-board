@@ -10,5 +10,10 @@ class JobController extends Controller
         $jobs=Job::all();
         return view("job/index",['jobs'=>$jobs,'organisation'=>'UIT']);
     }
+
+    function indecx (){
+        
+        return;
+    }
 }
  
