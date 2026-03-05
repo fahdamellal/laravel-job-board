@@ -11,9 +11,6 @@ class JobController extends Controller
         return view("job/index",['jobs'=>$jobs,'organisation'=>'UIT']);
     }
 
-    function indecx (){
-        
-        return;
-    }
+
 }
  
