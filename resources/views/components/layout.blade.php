@@ -8,10 +8,11 @@
   </head>
 </head>
 <body>
+    
     <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <x-nav-link href="/" :active="request()->is('/')" >Home</x-nav-link>
+        <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
+        <x-nav-link  href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
     </nav>
     <h1 class="text-3xl font-bold underline">
       Hello world!
