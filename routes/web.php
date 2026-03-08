@@ -2,6 +2,7 @@
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,4 +14,9 @@ Route::get('/job',[JobController::class,'index']);
 Route::get('/blog',[PostController::class,'index']);
 Route::get('/blog/create',[PostController::class,'create']);
 Route::get('/blog/{id}',[PostController::class,'show']);
+
+
+Route::get('/comment',[CommentController::class,'index']);
+Route::get('/comment/create/{post_id}',[CommentController::class,'create']);
+Route::get('/comment/{id}',[CommentController::class,'show']);
 

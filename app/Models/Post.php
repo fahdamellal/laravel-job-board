@@ -12,4 +12,12 @@ class Post extends Model
 
     //  les colonnes non modifiable
     protected $guarded=['id'] ;
+
+    public function comments(){
+
+       return $this->hasMany(Comment::class);
+    }
 }
+
+
+// 1 post have many comments 
