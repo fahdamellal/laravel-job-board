@@ -13,8 +13,8 @@ class PostController extends Controller
 
     public function create (){
         $post=Post::create([
-                'title'=> 'My first content',
-                'body'=>"This is my content",
+                'title'=> 'My Second Post',
+                'body'=>"Post 2 Content",
                 "author"=> "Yahya",
                 "published"=> true
         ]);
@@ -26,6 +26,11 @@ class PostController extends Controller
         return view("post.show",["post"=>$post,"pagetitle"=> $post->title]);
 
 
+    }
+
+    public function delete (){
+        Post::destroy(1);
+        return redirect("/blog");
     }
 
 }

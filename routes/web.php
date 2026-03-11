@@ -3,10 +3,14 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\TagController;
+
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [IndexController::class,'index']);
+Route::get('/comment/delete',[PostController::class,'delete']);
+
 Route::get('/about', [IndexController::class,'about']);
 Route::get('/contact', [IndexController::class,'contact']);
 
@@ -19,4 +23,13 @@ Route::get('/blog/{id}',[PostController::class,'show']);
 Route::get('/comment',[CommentController::class,'index']);
 Route::get('/comment/create/{post_id}',[CommentController::class,'create']);
 Route::get('/comment/{id}',[CommentController::class,'show']);
+
+
+Route::get('/commentt/{post_id}',[CommentController::class,'post_comment']);
+
+
+Route::get('/Tags',[TagController::class,'index']);
+Route::get('/Tags/create',[TagController::class,'create']);
+Route::get('/Tags/test_Many',[TagController::class,'test_Many']);
+
 

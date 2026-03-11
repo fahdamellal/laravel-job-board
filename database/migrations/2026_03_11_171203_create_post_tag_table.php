@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comment', function (Blueprint $table) {
+        Schema::create('post_tag', function (Blueprint $table) {
             $table->id();
-            $table->string('author');
-            $table->string('body');
-            $table->timestamps();
             $table->foreignId('post_id')->constrained('post')->cascadeOnDelete();
+            $table->foreignId('tag_id')->constrained('tag')->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 
@@ -25,10 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comment');
+        Schema::dropIfExists('post_tag');
     }
 };
-
-
-
-// 1 post have many comments 
