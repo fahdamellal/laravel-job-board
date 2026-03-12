@@ -33,10 +33,8 @@ class TagController extends Controller
     }
 
     public function test_Many(){
-        $post3=Post::find(3);
-        $post2=Post::find(2);
-        $post3->tags()->attach([1,2]);
-        $post2->tags()->attach([1]);
+        $post3=Post::find('019cdf68-848a-73b8-b34e-ca437ab978c7');
+        $post3->tags()->attach(['019cdf73-8c35-728f-bdfe-35bf324b00f3','019cdf73-affc-70ed-98b8-aa09973fc3b2']);
         return redirect("Tags");
     
     }

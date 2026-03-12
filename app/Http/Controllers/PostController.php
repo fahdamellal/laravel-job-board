@@ -6,18 +6,22 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 class PostController extends Controller
 {
+    
+    
     public function index(){
-        $posts=Post::all();
+        // simplePaginate
+        $posts=Post::cursorPaginate(5);
         return view("post.index",["posts"=>$posts,'pagetitle'=>'Blog']);
     }
 
     public function create (){
+        for($i= 0; $i< 100; $i++){
         $post=Post::create([
                 'title'=> 'My Second Post',
                 'body'=>"Post 2 Content",
                 "author"=> "Yahya",
                 "published"=> true
-        ]);
+        ]);}
         return redirect("/blog");
     }
 

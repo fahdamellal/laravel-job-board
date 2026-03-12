@@ -14,5 +14,5 @@
         <h2>Published :  {{ $post['published'] }}</h2>
 
     @endforeach
-
+    {{ $posts->links() }}
 </x-layout>  
